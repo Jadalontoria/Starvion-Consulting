@@ -12,6 +12,7 @@ WordPress block theme for [starvionconsulting.com.au](https://starvionconsulting
 | `starvion/patterns/` | The page sections (hero, services grid, process, and so on). Also available under **Starvion** in the block inserter. |
 | `starvion/parts/` | Header and footer. |
 | `starvion/inc/contact-form.php` | The contact form, used with the `[starvion_contact_form]` shortcode. |
+| `starvion/assets/images/logo-*.png` | Logo files: `logo-horizontal-reversed.png` (light, for the navy header and footer), `logo-horizontal.png` and `logo-full.png` (full colour, for light backgrounds). |
 | `bin/build-zip.sh` | Packages the theme as `starvion.zip`. |
 
 ## Install on a WordPress host
@@ -19,7 +20,8 @@ WordPress block theme for [starvionconsulting.com.au](https://starvionconsulting
 1. Run `bin/build-zip.sh`, or download the `starvion-theme` artifact from the latest **Build theme zip** run on GitHub Actions.
 2. In WordPress, go to **Appearance → Themes → Add New → Upload Theme**, choose `starvion.zip` and activate it.
 3. On activation the theme creates the Home, Services, About and Contact pages, sets Home as the front page, and switches permalinks to `/page-name/`.
-4. Set the site title under **Settings → General**. Enquiries from the contact form go to the **Administration Email Address** on that same screen.
+4. The browser tab icon comes from the logo automatically. To use a different one, set a Site Icon under **Appearance → Customize → Site Identity**.
+5. Set the site title under **Settings → General**. Enquiries from the contact form go to the **Administration Email Address** on that same screen.
 
 Requires WordPress 6.6 or later and PHP 7.4 or later.
 
@@ -37,4 +39,3 @@ WordPress sends mail through the host's PHP mailer, which spam filters often dis
 - Email, phone, city and LinkedIn link (Contact page and footer)
 - ABN (footer)
 - Industries list (Home page)
-- Logo: the header currently uses a text wordmark. Swap in a Site Logo block once the logo is final.

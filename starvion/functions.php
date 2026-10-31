@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'STARVION_VERSION', '0.1.0' );
+define( 'STARVION_VERSION', '0.2.0' );
 
 require get_template_directory() . '/inc/contact-form.php';
 
@@ -42,6 +42,19 @@ function starvion_render_shortcode_block( $content ) {
 	return do_shortcode( $content );
 }
 add_filter( 'render_block_core/shortcode', 'starvion_render_shortcode_block' );
+
+/**
+ * Browser tab and home-screen icons, used until a Site Icon is set in the Customizer.
+ */
+function starvion_default_icons() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	printf( '<link rel="icon" type="image/png" sizes="32x32" href="%s">' . "\n", esc_url( get_theme_file_uri( 'assets/images/favicon-32.png' ) ) );
+	printf( '<link rel="icon" type="image/png" sizes="512x512" href="%s">' . "\n", esc_url( get_theme_file_uri( 'assets/images/site-icon.png' ) ) );
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( get_theme_file_uri( 'assets/images/apple-touch-icon.png' ) ) );
+}
+add_action( 'wp_head', 'starvion_default_icons' );
 
 /**
  * Pattern category so Starvion sections are easy to find in the inserter.
