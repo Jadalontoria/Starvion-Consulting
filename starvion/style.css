@@ -15,14 +15,14 @@ Text Domain: starvion
 /* Most styling lives in theme.json. Rules here cover what theme.json cannot. */
 
 .starvion-hero {
-	background-image: url("assets/images/network-lines.svg"), linear-gradient(135deg, #0B1F3A 0%, #12305A 60%, #1E4A7B 100%);
+	background-image: url("assets/images/constellation.svg"), radial-gradient(ellipse at 75% 30%, #142C52 0%, #0B1F3A 55%, #060F1F 100%);
 	background-size: cover, cover;
-	background-position: right center, center;
+	background-position: center, center;
 	background-repeat: no-repeat;
 }
 
 .starvion-band {
-	background-image: url("assets/images/network-lines.svg"), linear-gradient(135deg, #0B1F3A 0%, #1E4A7B 100%);
+	background-image: url("assets/images/constellation.svg"), radial-gradient(ellipse at 75% 30%, #142C52 0%, #0B1F3A 55%, #060F1F 100%);
 	background-size: cover, cover;
 	background-position: center;
 	background-repeat: no-repeat;
