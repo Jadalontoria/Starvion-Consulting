@@ -1,0 +1,23 @@
+name: Build theme zip
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint PHP
+        run: find starvion -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Validate theme.json
+        run: python3 -c "import json; json.load(open('starvion/theme.json'))"
+      - name: Build zip
+        run: bin/build-zip.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: starvion-theme
+          path: starvion.zip
